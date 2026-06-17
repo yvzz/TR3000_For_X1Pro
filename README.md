@@ -3,17 +3,13 @@
 # Actions-OpenWrt
 
 [![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
-![GitHub Stars](https://img.shields.io/github/stars/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Stars&logo=github)
-![GitHub Forks](https://img.shields.io/github/forks/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Forks&logo=github)
-![Downloads](https://img.shields.io/github/downloads/clfang666/tr3000-open/total)
+![Downloads](https://img.shields.io/github/downloads/yvzz/TR3000_For_X1Pro/total)
 
 A template for building OpenWrt with GitHub Actions
 
 ## Usage
 
 - 克隆自[clfang666/tr3000-open](https://github.com/clfang666/tr3000-open)，感谢大佬。
-
-
 
 ## Credits
 
