@@ -8,8 +8,8 @@
 / {
 	#address-cells = <1>;
 	#size-cells = <1>;
-	model = "oraybox_x1-pro";
-	compatible = "mediatek,mt7981", "mediatek,mt7981-rfb";
+	model = "Oray X1 Pro";
+	compatible = "oray,x1_pro", "mediatek,mt7981";
 
 	chosen {
 		stdout-path = &uart0;
