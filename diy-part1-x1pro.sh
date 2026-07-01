@@ -1,14 +1,19 @@
 #!/bin/bash
 
 # X1 Pro 设备支持添加脚本
+set -x
+
+WORKSPACE="$GITHUB_WORKSPACE"
 
 echo "=== 添加 Oray X1 Pro 支持 ==="
 
+cd "$WORKSPACE/openwrt"
+
 # 1. 复制 DTS 文件
 echo "复制 DTS 文件..."
-cp $GITHUB_WORKSPACE/mt7981-oraybox_x1-pro.dts target/linux/mediatek/dts/mt7981_oray_x1-pro.dts
+cp "$WORKSPACE/mt7981-oraybox_x1-pro.dts" target/linux/mediatek/dts/mt7981_oray_x1-pro.dts
 
-# 2. 修改 DTS 文件，添加标准分区定义
+# 2. 重写 DTS 文件，添加标准分区定义（替换 mtd-layout 为标准 partitions）
 echo "修改 DTS 文件..."
 cat > target/linux/mediatek/dts/mt7981_oray_x1-pro.dts << 'EOF'
 // SPDX-License-Identifier: GPL-2.0-or-later
@@ -193,6 +198,7 @@ EOF
 # 4. 添加网络配置
 echo "添加网络配置..."
 mkdir -p base-files/etc/board.d
+grep -q "oray,x1-pro" base-files/etc/board.d/02_network || \
 cat >> base-files/etc/board.d/02_network << 'EOF'
 
 oray,x1-pro)
@@ -202,6 +208,7 @@ EOF
 
 # 5. 添加 LED 配置
 echo "添加 LED 配置..."
+grep -q "oray,x1-pro" base-files/etc/board.d/01_leds || \
 cat >> base-files/etc/board.d/01_leds << 'EOF'
 
 oray,x1-pro)
